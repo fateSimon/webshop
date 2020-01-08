@@ -26,7 +26,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('product.create');
     }
 
     /**
@@ -37,7 +37,12 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product();
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->description = $request->description;
+        $product->save();
+        return redirect(route('product.show',['product'=>$product]));
     }
 
     /**
@@ -48,7 +53,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('product.show',['product'->$product]);
+        return view('product.show',['product'=>$product]);
     }
 
     /**
@@ -59,7 +64,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('product.edit',['product'=>$product]);
     }
 
     /**
@@ -71,7 +76,10 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->save();
+        return redirect(route('product.show',['product'=>$product]));
     }
 
     /**
