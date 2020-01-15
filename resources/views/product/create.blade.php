@@ -1,8 +1,11 @@
+@include('partials.errors')
+
 <form action="{{route('product.store')}}" method="POST">
     @csrf
-    <input type="text" name="name" value="Produktname">
-    <input type="text" name="price" value="Preis">
-    <input type="text" name="description" value="Beschreibung">
 
-    <input type="submit">
+    <label for ="name">Produktname</label> <input type="text" name="name" value="">
+    <label for ="price">Preis</label> <input type="text" name="price" value="">
+    <label for ="text">Produktbeschreibung</label> <input type="text" name="description" value="">
+
+    <input type="submit" value="Produkt erstellen">
 </form>
