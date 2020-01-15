@@ -23,7 +23,7 @@ class StoreProduct extends FormRequest
     public function messages()
     {
         return [
-            'price.number' => __('product.number'),
+            'price.numeric' => __('product.numeric'),
         ];
     }
 }
