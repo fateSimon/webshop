@@ -1,8 +1,8 @@
-@foreach($categories as $category)
-    <a href="{{route('category.show',['category'=>$category])}}">
-        {{$category->name}}
+@foreach($products as $product)
+    <a href="{{route('product.show',['product'=>$product])}}">
+        {{$product->name}}
     </a>
-    <form action="{{ route('category.destroy',['category'=>$category]) }}" method="POST">
+    <form action="{{ route('product.destroy',['product'=>$product]) }}" method="POST">
         @method('DELETE')
         @csrf
         <button>[x]</button>
@@ -10,4 +10,4 @@
     <br>
 @endforeach
 
-<a href="{{route('category.create')}}">Neue Kategorie</a>
+<a href="{{route('product.create')}}">Neues Produkt</a>
